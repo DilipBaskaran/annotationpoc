@@ -1,45 +1,30 @@
 package com.e5.annotation.services;
 
 
-public abstract class SuperAbsClass {
-    private Class<?> parameter1;
-    private Class<?> parameter2;
-    private boolean parameter3;
-    private boolean parameter4;
+import lombok.Getter;
+import lombok.Setter;
 
-    public SuperAbsClass (){
+import java.util.List;
+import java.util.Map;
+
+@Getter
+@Setter
+public abstract class SuperAbsClass {
+    private Class classType1;
+    private boolean flag1;
+    private int integerValue;
+    private ClassLevel1 classLevel1;
+    private Class<? extends ClassLevel2> classLevel2Type;
+    private Class<? extends ClassLevel2>[] classLevel2Types;
+    private List<Class<? extends ClassLevel1>> classLevel1Types;
+
+    public SuperAbsClass (ClassLevel1  classLevel1){
+        this.classLevel1 = classLevel1;
         System.out.println("SuperClass constructor");
     }
+    public abstract List<Class<? extends ClassLevel2>> method(String param, ClassLevel1 param1);
 
-    public Class<?> getParameter1 () {
-        return parameter1;
-    }
-
-    public void setParameter1 (Class<?> parameter1) {
-        this.parameter1 = parameter1;
-    }
-
-    public Class<?> getParameter2 () {
-        return parameter2;
-    }
-
-    public void setParameter2 (Class<?> parameter2) {
-        this.parameter2 = parameter2;
-    }
-
-    public boolean isParameter3 () {
-        return parameter3;
-    }
-
-    public void setParameter3 (boolean parameter3) {
-        this.parameter3 = parameter3;
-    }
-
-    public boolean isParameter4 () {
-        return parameter4;
-    }
-
-    public void setParameter4 (boolean parameter4) {
-        this.parameter4 = parameter4;
+    public Class<? extends ClassLevel2> method() {
+        return ClassLevel3.class;
     }
 }

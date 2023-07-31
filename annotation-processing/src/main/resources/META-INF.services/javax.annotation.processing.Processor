@@ -1,2 +1,1 @@
-com.e5.annotation.processor.BaseAbsClassAnnotationProcessor
-com.e5.annotation.processor.BuilderProcessor
+processor.annotation.com.e5.main.BaseAbsClassAnnotationProcessor
